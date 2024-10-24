@@ -1,12 +1,16 @@
 import React from "react";
-import characterCard from "../component/characterCards";
-
+import { CharacterCards } from "../component/characterCards";
+import { PlanetCards } from "../component/planetCards";
+import { StarshipCards } from "../component/starshipCards";
+import "../../styles/home.css";
 
 export const Home = () => (
+	
 	<div className="text-center mt-5">
-
-		<characterCard/>
-		<characterDescription/>
+		<CharacterCards />
+		<PlanetCards />
+		<StarshipCards />
 
 	</div>
+
 );

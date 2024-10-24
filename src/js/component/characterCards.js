@@ -1,15 +1,16 @@
 import React, { useState, useEffect, useContext } from "react";
 import { Context } from "../store/appContext";
 import { Link } from "react-router-dom";
+import {character} from "../views/character";
 
-export default function CharacterCard() {
+export default function CharacterCards() {
     const [characters, setCharacters] = useState([]);
     const {store, actions} = useContext(Context);
 
     useEffect(() => {
         async function getCharacters() {
           let response = await fetch("https://www.swapi.tech/api/people")
-          let data = await response.json()
+          let data = await response.json();
           setCharacters(data)
         }
         getCharacters()
@@ -34,9 +35,8 @@ export default function CharacterCard() {
                 {/* <img src="..." className="card-img-top" alt="..."/> */}
                 <div className="card-body">
                 <h5 className="card-title">{character.name}</h5>
-                <p className="card-text">{character.affiliation}</p>
-                <Link to={`/character/${character._id}`} href="#" className="btn btn-primary">Learn More</Link>
-                <span onClick={(e) => handleFavorites(e, character.name)}>❤️</span>
+                <Link to={`/character/${characterDescription}`} className="btn btn-primary">Learn More</Link>
+                <span onClick={(e) => handleFavorites(e, character.id)}><i className="fa-solid fa-star"></i></span>
                 </div>
             </div>
           ))}

@@ -5,8 +5,9 @@ import ScrollToTop from "./component/scrollToTop";
 import { Home } from "./views/home";
 import { Demo } from "./views/demo";
 import { Single } from "./views/single";
-import CharacterCard from "./component/characterCards";
-import characterDescription from "./views/characterDescription";
+import { Planet } from "./views/planet";
+import { Character } from "./views/character";
+import {Starship} from "./views/starship";
 import injectContext from "./store/appContext";
 
 import { Navbar } from "./component/navbar";
@@ -28,6 +29,9 @@ const Layout = () => {
 						<Route path="/demo" element={<Demo />} />
 						<Route path="/single/:theid" element={<Single />} />
 						<Route path="*" element={<h1>Not found!</h1>} />
+						<Route path="/character/:name" element={<Character />} />
+						<Route path="/planet/:homeworld" element={<Planet />} />
+						<Route path= "/starship/:_id" element={<Starship />} />
 					</Routes>
 					<Footer />
 				</ScrollToTop>
