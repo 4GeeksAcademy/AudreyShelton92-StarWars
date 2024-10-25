@@ -5,7 +5,7 @@ const getState = ({ getStore, getActions, setStore }) => {
 		},
 		actions: {
 				addFavs : (fav) => {
-					setStore ({favs: [...getStore().favs]})
+					setStore ({favs: [...getStore().favs, fav]})
 				},
 				removeFavs : (fav) => {
 					let newFavs = getStore().favs.filter((favorite, index) => {

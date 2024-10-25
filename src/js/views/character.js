@@ -5,17 +5,17 @@ export default function CharacterDescription() {
   const { id } = useParams();
   const [character, setCharacter] = useState({});
 
-  useEffect(() => {}
+  useEffect(() => {
     async function getCharacter() {
       let response = await fetch(`https://www.swapi.tech/api/people/${id}`);
       let data = await response.json();
-      setCharacter(data.result); 
+      setCharacter(data.result.properties);
+    } 
     getCharacter();
   } , [id] ) ;
 
   return (
     <>
-    
       <div>{character.name}</div>
     </>
   );

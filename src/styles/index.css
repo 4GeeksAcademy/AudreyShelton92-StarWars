@@ -1,4 +1,20 @@
-/* 
-    General Styles
-*/
+.btn {
+    border: none;
+}
 
+
+* {
+    background-image: url("https://preview.redd.it/clear-night-and-stars-gear-below-v0-y7794cwwnjib1.jpg?width=1776&format=pjpg&auto=webp&s=17d5b0e42f38b08277e1f75bb12bbba52134a686");
+    color:#FFE81F;
+}
+
+
+.dropdown-item {
+    color: white;
+    
+}
+
+.footer { 
+position: fixed;
+bottom:15px;left:0;right:0;height:20px;
+}

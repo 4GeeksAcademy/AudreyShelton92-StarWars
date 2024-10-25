@@ -11,7 +11,7 @@ export default function CharacterCards() {
         async function getCharacters() {
           let response = await fetch("https://www.swapi.tech/api/people")
           let data = await response.json();
-          setCharacters(data)
+          setCharacters(data.results)
         }
         getCharacters()
       }, [])
@@ -32,11 +32,11 @@ export default function CharacterCards() {
         <div className="d-flex col-10 overflow-auto mt-5 mx-auto">
           {characters?.map((character, index) => (
             <div key={index} className="card" style={{"minWidth": "18rem"}}>
-                {/* <img src="..." className="card-img-top" alt="..."/> */}
+                <img src={`https://starwars-visualguide.com/assets/img/characters/${character.uid}.jpg`} className="img-fluid rounded" alt={character.name} />
                 <div className="card-body">
                 <h5 className="card-title">{character.name}</h5>
-                <Link to={`/character/${characterDescription}`} className="btn btn-primary">Learn More</Link>
-                <span onClick={(e) => handleFavorites(e, character.id)}><i className="fa-solid fa-star"></i></span>
+                <Link to={`/character/${character.uid}`} className="btn btn-primary">Learn More</Link>
+                <span onClick={(e) => handleFavorites(e, character.name)}><i className="fa fa-solid fa-star"></i></span>
                 </div>
             </div>
           ))}
