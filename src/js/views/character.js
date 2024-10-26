@@ -16,7 +16,14 @@ export default function CharacterDescription() {
 
   return (
     <>
-      <div>{character.name}</div>
+       <div>
+            <h1>{character.name}</h1>
+            <p>Gender: {character.gender}</p>
+            <p>Hair Color: {character.hair_color}</p>
+            <p>Height: {character.height}</p>
+            <p>Birth Year: {character.birth_year}</p>
+        
+            </div>
     </>
   );
 }
